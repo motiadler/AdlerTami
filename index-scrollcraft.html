@@ -893,8 +893,10 @@ body.home footer.site{display:none}
 .cfoot a:hover{color:var(--ink);text-decoration:underline}
 
 /* ===== signature: the living divider ===== */
-#spine{display:none}
-body.home #spine{display:block;position:fixed;z-index:30;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;pointer-events:none;transform:translateX(calc(var(--k,0) * 50vw))}
+#spine{display:block;position:fixed;z-index:30;top:0;bottom:0;right:14px;width:2px;pointer-events:none}
+body.home #spine{right:auto;left:50%;margin-left:-1px;transform:translateX(calc(var(--k,0) * 50vw))}
+body:not(.home) #spine .labs{display:none}
+body:not(.home) #spine .stem{top:calc(env(safe-area-inset-top,0px) + 6.5rem)}
 #spine .labs{position:absolute;top:calc(env(safe-area-inset-top,0px) + 1.7rem);left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:1.1rem;white-space:nowrap;font-weight:700;font-size:.92rem;color:var(--ink-2);opacity:calc(1 - var(--k,0) * 2);transition:opacity .3s}
 #spine .labs i{width:7px;height:7px;border-radius:50%;background:var(--plum);display:block}
 #spine .labs.swap span{opacity:0}
@@ -944,6 +946,8 @@ body.home #spine{display:block;position:fixed;z-index:30;top:0;bottom:0;left:50%
   .storm{width:100%;height:50%;bottom:auto;transform:translateY(calc(-100% * var(--k)))}
   .cfoot{padding-inline:4.5rem 1rem;font-size:.85rem;gap:.2rem 1rem}
   body.home #spine{left:auto;right:1.25rem;margin-left:0;transform:none;opacity:calc(1 - var(--k,0))}
+  body:not(.home) #spine{right:10px}
+  body:not(.home) main .wrap{width:auto;margin-inline:2.4rem 1.25rem}
   #spine .labs{display:none}
   #spine .stem{top:calc(env(safe-area-inset-top,0px) + 5.5rem)}
 }
@@ -1035,43 +1039,6 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
     </div>
   </section>
 
-  <!-- 2 · PAIRS: pin + cue/kinetic + count. Real before lines, answered by the same client's after. -->
-  <section class="p-act" data-sc-act="pin" data-sc-span="2.6" data-spine-r="לפני" data-spine-l="אחרי">
-    <div data-sc-stage class="pstage">
-      <div class="side side-r" aria-hidden="true"><div class="wash dusk soft"></div></div>
-      <div class="side side-l" aria-hidden="true"><div class="wash dawn soft"></div></div>
-
-      <figure class="duet">
-        <blockquote class="b" data-sc-cue="0 0.27 0">״לא האמנתי שאצליח להירדם בקלות במיטה שלי.״</blockquote>
-        <div class="a">
-          <blockquote data-sc-cue="0 0.27 0" data-sc-kinetic="words">״למדתי שאני מנצח הכל ומנהל את הפחדים שלי.״</blockquote>
-          <figcaption data-sc-cue="0 0.27 0">ג.י, נס ציונה</figcaption>
-        </div>
-      </figure>
-      <figure class="duet">
-        <blockquote class="b" data-sc-cue="0.26 0.51">״ויתרתי על עצמי, שכחתי את עצמי, שמתי את עצמי בצללים.״</blockquote>
-        <div class="a">
-          <blockquote data-sc-cue="0.31 0.51" data-sc-kinetic="words">״היום אני נטו אני. אני שלמה, אני נושמת, טוב לי.״</blockquote>
-          <figcaption data-sc-cue="0.31 0.51">מ.א, תל אביב</figcaption>
-        </div>
-      </figure>
-      <figure class="duet">
-        <blockquote class="b" data-sc-cue="0.5 0.75">״הגעתי לכאן לפני 3 חודשים עצובה, פסימית, חלשה נפשית.״</blockquote>
-        <div class="a">
-          <blockquote data-sc-cue="0.55 0.75" data-sc-kinetic="words">״היום, בסוף התהליך, אני מרגישה אופטימית, חזקה.״</blockquote>
-          <figcaption data-sc-cue="0.55 0.75">ש.א, יבנה</figcaption>
-        </div>
-      </figure>
-      <figure class="duet">
-        <blockquote class="b" data-sc-cue="0.74">״אמרתי לאמא שלי שלא בא לי לבוא.״</blockquote>
-        <div class="a">
-          <blockquote data-sc-cue="0.79">״ופתאום עברו <span class="n" data-sc-count="0 84" data-sc-count-at="0.8 0.95">84</span> ימים שבהם הצלחתי לנהל את רגש הכעס מחדש.״</blockquote>
-          <figcaption data-sc-cue="0.79">א.א, חולון</figcaption>
-        </div>
-      </figure>
-    </div>
-  </section>
-
   <!-- 3 · WHO + PATHS: flow + reveal -->
   <section class="duo who" data-sc-act="flow" data-spine-r="אמא" data-spine-l="מטפלת">
     <div class="duo-grid">
@@ -1123,8 +1090,8 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
       <div class="col col-r">
         <h2 class="col-h">בקליניקה בנס ציונה</h2>
         <div class="facts">
-          <p><span class="big" data-sc-count="0 12">12</span>מפגשים בתהליך</p>
-          <p><span class="big" data-sc-count="0 20">20</span>שנות ליווי הורים וצוותים</p>
+          <p><span class="big" data-count="12">12</span>מפגשים בתהליך</p>
+          <p><span class="big" data-count="20">20</span>שנות ליווי הורים וצוותים</p>
         </div>
         <ul class="rows" data-sc-in data-sc-stagger="70">
           <li><a href="#kids"><b>טיפול לילדים ונוער</b><span>פחדים, כעסים, ויסות רגשי</span></a></li>
@@ -1142,6 +1109,43 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
           <li><a href="#products"><b>המוצרים שלי</b><span>משחקים, מחברות ופנקסים</span></a></li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- 2 · PAIRS: pin + cue/kinetic + count. Real before lines, answered by the same client's after. -->
+  <section class="p-act" data-sc-act="pin" data-sc-span="2.6" data-spine-r="לפני" data-spine-l="אחרי">
+    <div data-sc-stage class="pstage">
+      <div class="side side-r" aria-hidden="true"><div class="wash dusk soft"></div></div>
+      <div class="side side-l" aria-hidden="true"><div class="wash dawn soft"></div></div>
+
+      <figure class="duet">
+        <blockquote class="b" data-sc-cue="0 0.27 0">״לא האמנתי שאצליח להירדם בקלות במיטה שלי.״</blockquote>
+        <div class="a">
+          <blockquote data-sc-cue="0 0.27 0" data-sc-kinetic="words">״למדתי שאני מנצח הכל ומנהל את הפחדים שלי.״</blockquote>
+          <figcaption data-sc-cue="0 0.27 0">ג.י, נס ציונה</figcaption>
+        </div>
+      </figure>
+      <figure class="duet">
+        <blockquote class="b" data-sc-cue="0.26 0.51">״ויתרתי על עצמי, שכחתי את עצמי, שמתי את עצמי בצללים.״</blockquote>
+        <div class="a">
+          <blockquote data-sc-cue="0.31 0.51" data-sc-kinetic="words">״היום אני נטו אני. אני שלמה, אני נושמת, טוב לי.״</blockquote>
+          <figcaption data-sc-cue="0.31 0.51">מ.א, תל אביב</figcaption>
+        </div>
+      </figure>
+      <figure class="duet">
+        <blockquote class="b" data-sc-cue="0.5 0.75">״הגעתי לכאן לפני 3 חודשים עצובה, פסימית, חלשה נפשית.״</blockquote>
+        <div class="a">
+          <blockquote data-sc-cue="0.55 0.75" data-sc-kinetic="words">״היום, בסוף התהליך, אני מרגישה אופטימית, חזקה.״</blockquote>
+          <figcaption data-sc-cue="0.55 0.75">ש.א, יבנה</figcaption>
+        </div>
+      </figure>
+      <figure class="duet">
+        <blockquote class="b" data-sc-cue="0.74">״אמרתי לאמא שלי שלא בא לי לבוא.״</blockquote>
+        <div class="a">
+          <blockquote data-sc-cue="0.79">״ופתאום עברו <span class="n" data-count="84">84</span> ימים שבהם הצלחתי לנהל את רגש הכעס מחדש.״</blockquote>
+          <figcaption data-sc-cue="0.79">א.א, חולון</figcaption>
+        </div>
+      </figure>
     </div>
   </section>
 
@@ -1576,7 +1580,7 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
 (function(){var a=document.querySelector("#v-home .h-act");if(!a)return;var m=matchMedia("(max-width:860px)").matches,T=m?0.85:0.4,k=0.5/T;
 a.setAttribute("data-sc-span",(1+T).toFixed(2));a.style.setProperty("--hk",(T/0.5).toFixed(3));
 a.querySelectorAll("[data-sc-cue]").forEach(function(e){var v=e.getAttribute("data-sc-cue").split(" ").map(Number);v[1]=+(v[1]+(0.4/T-0.8)).toFixed(3);e.setAttribute("data-sc-cue",v.join(" "))});
-if(m){var p=document.querySelector("#v-home .p-act");p.style.marginTop=Math.round(-0.55*innerHeight)+"px";p.style.position="relative";p.style.zIndex="2"}})();
+if(m){var p=a.nextElementSibling;p.style.marginTop=Math.round(-0.55*innerHeight)+"px";p.style.position="relative";p.style.zIndex="2"}})();
 </script>
 <script>/* scrollcraft engine (verbatim) */
 /* ============================================================================
@@ -2937,12 +2941,13 @@ if(m){var p=document.querySelector("#v-home .p-act");p.style.marginTop=Math.roun
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   function cl(x){return x<0?0:x>1?1:x}
   function tick(){
-    if(document.body.classList.contains('home')){
-      var y=window.scrollY,vh=window.innerHeight;
-      var ct=close.getBoundingClientRect().top+y;
-      var g=cl(y/Math.max(1,ct-vh*.15));
-      if(Math.abs(g-lastG)>.0005){lastG=g;grow.style.transform='scaleY('+g.toFixed(4)+')';
-        for(var i=0;i<leaves.length;i++){leaves[i].classList.toggle('open',g>=parseFloat(leaves[i].dataset.at))}}
+    var home=document.body.classList.contains('home'),y=window.scrollY,vh=window.innerHeight,g;
+    if(home){var ct=close.getBoundingClientRect().top+y;g=cl(y/Math.max(1,ct-vh*.15))}
+    else{g=cl(y/Math.max(1,document.documentElement.scrollHeight-vh));if(lastK!==0){lastK=0;spine.style.setProperty('--k','0')}}
+    if(Math.abs(g-lastG)>.0005){lastG=g;grow.style.transform='scaleY('+g.toFixed(4)+')';
+      for(var i=0;i<leaves.length;i++){leaves[i].classList.toggle('open',g>=parseFloat(leaves[i].dataset.at))}}
+    runCounters(vh);
+    if(home){
       var cp=parseFloat(close.style.getPropertyValue('--sc-p'))||0,k=cl((cp-.02)*3.2);
       if(Math.abs(k-lastK)>.0005){lastK=k;spine.style.setProperty('--k',k.toFixed(4))}
       var mid=vh*.5,pick=null;
@@ -2952,6 +2957,17 @@ if(m){var p=document.querySelector("#v-home .p-act");p.style.marginTop=Math.roun
           if(reduce){lr.textContent=a;ll.textContent=b}else{labs.classList.add('swap');clearTimeout(swapT);swapT=setTimeout(function(){lr.textContent=a;ll.textContent=b;labs.classList.remove('swap')},250)}labs.classList.toggle('empty',!a&&!b)}}
     }
     requestAnimationFrame(tick);
+  }
+  // counters: once a number is on screen (and its text has faded in), it counts up by itself
+  var counters=[].slice.call(document.querySelectorAll('[data-count]'));
+  counters.forEach(function(el){el.textContent=reduce?el.dataset.count:'0'});
+  function runCounters(vh){
+    for(var c=0;c<counters.length;c++){var el=counters[c];if(el.dataset.done)continue;
+      var r=el.getBoundingClientRect();if(!r.height||r.top>vh*.92||r.bottom<vh*.05)continue;
+      var cue=el.closest('[data-sc-cue]');if(cue&&parseFloat(getComputedStyle(cue).opacity)<.6)continue;
+      el.dataset.done='1';(function(el){var end=+el.dataset.count,t0=performance.now(),dur=1400;
+        if(reduce){el.textContent=end;return}
+        (function step(t){var q=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-q,3);el.textContent=Math.round(end*e);if(q<1)requestAnimationFrame(step)})(t0)})(el)}
   }
   requestAnimationFrame(tick);
   var y2=document.querySelector('.yr2'); if(y2) y2.textContent=new Date().getFullYear();
