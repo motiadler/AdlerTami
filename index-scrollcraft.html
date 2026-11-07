@@ -827,16 +827,16 @@ body.home footer.site{display:none}
 :root[data-theme="dark"] .hwash{background:radial-gradient(48% 42% at 28% 30%,#4A2E40,rgba(74,46,64,0) 70%),radial-gradient(45% 40% at 18% 78%,#223A50,rgba(34,58,80,0) 70%),#18151F}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hwash{background:radial-gradient(48% 42% at 28% 30%,#4A2E40,rgba(74,46,64,0) 70%),radial-gradient(45% 40% at 18% 78%,#223A50,rgba(34,58,80,0) 70%),#18151F}}
 .hgrid{position:absolute;inset:0;margin-inline:auto;width:min(1180px,100% - 2.5rem);display:grid;grid-template-columns:1.1fr .9fr;column-gap:clamp(3rem,8vw,7rem);align-items:center;padding-top:5rem}
-.htext{position:relative;z-index:4;transform:translate3d(0,calc(var(--sc-p,0) * -110px),0)}
+.htext{position:relative;z-index:4;transform:translate3d(0,calc(var(--sc-p,0) * var(--hk,1) * -110px),0)}
 .hero-h{font-family:var(--display);font-weight:400;font-size:clamp(3rem,7.6vw,6.6rem);line-height:1.02;letter-spacing:-.01em;margin:0 0 .3em;max-width:9ch}
 .hero-sub{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,1.9rem);color:var(--plum);margin:0 0 1.1rem}
 .hero-lede{font-size:1.18rem;color:var(--ink-2);max-width:46ch;margin:0 0 2rem}
 .hportal.portal{position:relative;width:min(100%,460px);justify-self:center;z-index:3}
 .hportal .plane{position:absolute;inset:0}
-.hportal .scaler{position:absolute;inset:0;transform:scale(calc(1 - var(--sc-p,0) * .12));transform-origin:50% 60%}
-.hportal .pl-orbit{transform:translate3d(0,calc(var(--sc-p,0) * -24px),0) scale(calc(1 + var(--sc-p,0) * .06))}
-.hportal .pl-ring{transform:translate3d(0,calc(var(--sc-p,0) * -70px),0)}
-.hportal .pl-mk{transform:translate3d(0,calc(var(--sc-p,0) * var(--mk-travel,-160px)),0)}
+.hportal .scaler{position:absolute;inset:0;transform:scale(calc(1 - var(--sc-p,0) * var(--hk,1) * .12));transform-origin:50% 60%}
+.hportal .pl-orbit{transform:translate3d(0,calc(var(--sc-p,0) * var(--hk,1) * -24px),0) scale(calc(1 + var(--sc-p,0) * var(--hk,1) * .06))}
+.hportal .pl-ring{transform:translate3d(0,calc(var(--sc-p,0) * var(--hk,1) * -70px),0)}
+.hportal .pl-mk{transform:translate3d(0,calc(var(--sc-p,0) * var(--hk,1) * var(--mk-travel,-160px)),0)}
 .fg{position:absolute;z-index:5;pointer-events:none;overflow:visible}
 .fg path{fill:#E9B9D3;opacity:.8}
 .fg .vein{fill:none;stroke:rgba(255,255,255,.65);stroke-width:2}
@@ -876,7 +876,7 @@ body.home footer.site{display:none}
 .rows a:hover b{color:var(--plum)}
 
 /* ===== 5 close: the collapse (peak) ===== */
-.c-act{--k:min(1,max(0,calc((var(--sc-p,0) - .04) * 2.6)));--b:min(1,max(0,calc((var(--sc-p,0) - .26) * 3.2)))}
+.c-act{--k:min(1,max(0,calc((var(--sc-p,0) - .02) * 3.2)));--b:min(1,max(.35,calc(var(--sc-p,0) * 4)))}
 .cstage{background:var(--dawn-flat)}
 .calm{position:absolute;inset:0;background:radial-gradient(50% 45% at 25% 30%,rgba(245,205,226,.7),rgba(245,205,226,0) 70%),radial-gradient(50% 45% at 75% 75%,rgba(188,221,245,.7),rgba(188,221,245,0) 70%),var(--dawn-flat);clip-path:inset(0 calc(50% * (1 - var(--k))) 0 0)}
 .calm-in{position:absolute;inset:0;margin-inline:auto;width:min(1120px,100% - 2.5rem);display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;column-gap:clamp(2rem,5vw,5rem);padding-bottom:4rem;transform:translateX(calc(-25vw * (1 - var(--k))))}
@@ -988,13 +988,18 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
 <div id="spine" aria-hidden="true">
   <div class="labs"><span class="lab-r">לפני</span><i></i><span class="lab-l">אחרי</span></div>
   <div class="stem"><div class="grow"></div>
-    <span class="leaf r" style="top:10%" data-at=".1"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
-    <span class="leaf l alt" style="top:24%" data-at=".24"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
-    <span class="leaf r alt" style="top:38%" data-at=".38"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
-    <span class="leaf l" style="top:52%" data-at=".52"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
-    <span class="leaf r" style="top:66%" data-at=".66"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
-    <span class="leaf l alt" style="top:80%" data-at=".8"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
-    <span class="leaf r alt" style="top:93%" data-at=".93"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf r" style="top:5.0%" data-at="0.05"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf l alt" style="top:13.1%" data-at="0.131"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf r" style="top:21.2%" data-at="0.212"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf l" style="top:29.3%" data-at="0.293"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf r alt" style="top:37.4%" data-at="0.374"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf l" style="top:45.5%" data-at="0.455"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf r" style="top:53.6%" data-at="0.536"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf l alt" style="top:61.7%" data-at="0.617"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf r" style="top:69.8%" data-at="0.698"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf l" style="top:77.9%" data-at="0.779"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf r alt" style="top:86.0%" data-at="0.86"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
+    <span class="leaf l" style="top:94.1%" data-at="0.941"><svg viewBox="0 0 120 200"><path d="M60 196C18 150 6 92 26 44 38 16 60 4 60 4s22 12 34 40c20 48 8 106-34 152z"/><path class="vein" d="M60 196V30"/></svg></span>
   </div>
 </div>
 
@@ -1037,31 +1042,31 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
       <div class="side side-l" aria-hidden="true"><div class="wash dawn soft"></div></div>
 
       <figure class="duet">
-        <blockquote class="b" data-sc-cue="0.02 0.27">״לא האמנתי שאצליח להירדם בקלות במיטה שלי.״</blockquote>
+        <blockquote class="b" data-sc-cue="0 0.27 0">״לא האמנתי שאצליח להירדם בקלות במיטה שלי.״</blockquote>
         <div class="a">
-          <blockquote data-sc-cue="0.07 0.27" data-sc-kinetic="words">״למדתי שאני מנצח הכל ומנהל את הפחדים שלי.״</blockquote>
-          <figcaption data-sc-cue="0.07 0.27">ג.י, ראשון לציון</figcaption>
+          <blockquote data-sc-cue="0 0.27 0" data-sc-kinetic="words">״למדתי שאני מנצח הכל ומנהל את הפחדים שלי.״</blockquote>
+          <figcaption data-sc-cue="0 0.27 0">ג.י, נס ציונה</figcaption>
         </div>
       </figure>
       <figure class="duet">
         <blockquote class="b" data-sc-cue="0.26 0.51">״ויתרתי על עצמי, שכחתי את עצמי, שמתי את עצמי בצללים.״</blockquote>
         <div class="a">
           <blockquote data-sc-cue="0.31 0.51" data-sc-kinetic="words">״היום אני נטו אני. אני שלמה, אני נושמת, טוב לי.״</blockquote>
-          <figcaption data-sc-cue="0.31 0.51">מ.א, יבנה</figcaption>
+          <figcaption data-sc-cue="0.31 0.51">מ.א, תל אביב</figcaption>
         </div>
       </figure>
       <figure class="duet">
         <blockquote class="b" data-sc-cue="0.5 0.75">״הגעתי לכאן לפני 3 חודשים עצובה, פסימית, חלשה נפשית.״</blockquote>
         <div class="a">
           <blockquote data-sc-cue="0.55 0.75" data-sc-kinetic="words">״היום, בסוף התהליך, אני מרגישה אופטימית, חזקה.״</blockquote>
-          <figcaption data-sc-cue="0.55 0.75">ש.א, גבעתיים</figcaption>
+          <figcaption data-sc-cue="0.55 0.75">ש.א, יבנה</figcaption>
         </div>
       </figure>
       <figure class="duet">
         <blockquote class="b" data-sc-cue="0.74">״אמרתי לאמא שלי שלא בא לי לבוא.״</blockquote>
         <div class="a">
           <blockquote data-sc-cue="0.79">״ופתאום עברו <span class="n" data-sc-count="0 84" data-sc-count-at="0.8 0.95">84</span> ימים שבהם הצלחתי לנהל את רגש הכעס מחדש.״</blockquote>
-          <figcaption data-sc-cue="0.79">א.א, רחובות</figcaption>
+          <figcaption data-sc-cue="0.79">א.א, חולון</figcaption>
         </div>
       </figure>
     </div>
@@ -1075,7 +1080,7 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
       </div>
       <div class="col col-l" data-sc-in>
         <h2 class="col-h">נעים להכיר, אני תמי אדלר</h2>
-        <p>מטפלת רגשית מוסמכת בדרגת NLP Trainer ויועצת חינוכית, עם התמחות בהנחיית ילדים ונוער עם ADHD ובטראומה. כותבת תוכנית ״לשנות מבפנים״ של משרד החינוך, ומקבלת בקליניקה פרטית בנס ציונה.</p>
+        <p>יועצת חינוכית, פסיכותרפיסטית CBT, NLP Trainer ומנחה בדמיון מודרך, עם התמחות בהנחיית ילדים ונוער עם ADHD וטראומה. כותבת את התוכניות ״כיסים של שלווה״ ו״הגיבורה שבי״ של משרד החינוך, ומקבלת בקליניקה פרטית בנס ציונה.</p>
         <a class="more" href="#about">עוד עליי</a>
       </div>
     </div>
@@ -1141,7 +1146,7 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
   </section>
 
   <!-- 5 · CLOSE (PEAK): pin + collapse. The calm column takes the full width. -->
-  <section class="c-act" id="close-act" data-sc-act="pin" data-sc-span="3.4" data-spine-r="" data-spine-l="">
+  <section class="c-act" id="close-act" data-sc-act="pin" data-sc-span="2.4" data-spine-r="" data-spine-l="">
     <div data-sc-stage class="cstage">
       <div class="calm" >
         <div class="calm-in">
@@ -1149,15 +1154,15 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
             <div class="cportal portal"><div class="orbit"></div><div class="ring"></div><span class="mk logo"></span></div>
           </div>
           <div class="calm-copy">
-            <h2 class="side-h" data-sc-cue="0.46" data-sc-kinetic="lines">לברוא את מציאות חייכם.</h2>
-            <p data-sc-cue="0.54">הצעד הראשון הוא פגישת הזנקה של כשעה: נכיר את האתגרים והחוזקות, ותצאו עם מפת דרכים לצעדים הראשונים.</p>
-            <div class="btns" data-sc-cue="0.6" data-sc-rise="0">
+            <h2 class="side-h" data-sc-cue="0.36" data-sc-kinetic="lines">לברוא את מציאות חייכם.</h2>
+            <p data-sc-cue="0.42">הצעד הראשון הוא פגישת הזנקה של כשעה: נכיר את האתגרים והחוזקות, ותצאו עם מפת דרכים לצעדים הראשונים.</p>
+            <div class="btns" data-sc-cue="0.48" data-sc-rise="0">
               <a class="btn btn-ink" href="#contact">לפגישת הזנקה</a>
               <a class="btn btn-out" href="https://wa.me/972547533995" target="_blank" rel="noopener">וואטסאפ</a>
             </div>
           </div>
         </div>
-        <footer class="cfoot" data-sc-cue="0.68" data-sc-rise="0">
+        <footer class="cfoot" data-sc-cue="0.54" data-sc-rise="0">
           <a href="tel:+972547533995" class="ltr">054-7533995</a>
           <a href="mailto:adler.tami@gmail.com">adler.tami@gmail.com</a>
           <span>קליניקה בנס ציונה</span>
@@ -1176,12 +1181,12 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
 
 <!-- ================= ABOUT ================= -->
 <div class="view" id="v-about">
-  <div class="ph"><div class="wrap"><div class="crumb"><a href="#home">דף הבית</a> / אודות</div><h1>נעים להכיר,<br>אני תמי אדלר</h1><p>ילדים ומבוגרים זקוקים לכלים ולהכוונה כדי לווסת רגשות ולהתחבר מחדש לשקט הנפשי ולשמחת החיים.</p><span class="mark logo mk" aria-hidden="true"></span></div></div>
+  <div class="ph"><div class="wrap"><div class="crumb"><a href="#home">דף הבית</a> / אודות</div><h1>נעים להכיר,<br>אני תמי אדלר</h1><p>ילדים ומבוגרים זקוקים לכלים ולהכוונה כדי לווסת רגשות ולהתחבר מחדש לשקט הנפשי ולשמחת החיים. באמצעות טיפול רגשי, תוכלו לברוא את מציאות חייכם, כפי שרציתם שתהיה.</p><span class="mark logo mk" aria-hidden="true"></span></div></div>
   <section class="sec">
     <div class="wrap cols">
       <div class="measure">
-        <p style="font-size:1.25rem">מטפלת רגשית מוסמכת בדרגת NLP Trainer, בטיפול לשחרור פחדים וכעסים בילדים, נוער ומבוגרים, עם התמחות בהנחיית ילדים ונוער עם ADHD ובטראומה.</p>
-        <p>בנוסף, אני יועצת חינוכית המלווה ילדים, צוותים חינוכיים והורים, כותבת תוכנית ״לשנות מבפנים״ של משרד החינוך ובעלת קליניקה פרטית בנס ציונה.</p>
+        <p style="font-size:1.25rem">יועצת חינוכית, פסיכותרפיסטית קוגניטיבית התנהגותית CBT, NLP Trainer ומנחה בדמיון מודרך. מטפלת רגשית לשחרור פחדים וכעסים בילדים, נוער ומבוגרים, עם התמחות בהנחיית ילדים ונוער עם ADHD ובטראומה.</p>
+        <p>כיועצת חינוכית אני מלווה ילדים, צוותים חינוכיים והורים, וכותבת את התוכניות ״כיסים של שלווה״ ו״הגיבורה שבי״ של משרד החינוך. יש לי קליניקה פרטית בנס ציונה, ואני מרצה ומנחה סדנאות.</p>
         <h2 style="margin-top:2.5rem">ובנימה אישית</h2>
         <p>אני חיה ונושמת את תחום הטיפול, מטפלת מתוך שליחות אישית ומאמינה שכל אחד יכול לעשות שינוי ולחיות מתוך מימוש ועוצמה. אי אפשר להוסיף שנים לחיינו, אבל אפשר להפיח בהם חיים. בטיפול תלמדו לבחור בתגובות ובמעשים שיובילו לשינוי מהותי בכם ובאיכות החיים שלכם.</p>
       </div>
@@ -1243,6 +1248,7 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
     <div class="wrap measure">
       <h2>זה הזמן לבחור בכן</h2>
       <p>החוק של ״שלוש, יוצא אחד״, או משפחה, או עבודה, או את, לא עובד כאן. הסוד הוא לבחור בעצמכן: לא במקום, אלא בנוסף. למצוא עוגן ושליטה פנימית, ולהבין שמה שקורה לכן רק קורה, אבל לא מפעיל אתכן, זו עבודת חיים. מציאת האיזון בין חלקי הפסיפס תוביל אתכן אל השלווה והשמחה שבכן.</p>
+      <p style="font-family:var(--display);font-size:1.5rem;line-height:1.45;color:var(--ink)">זה הזמן לעצמכן, כי מגיע לכן להסתובב עם חיוך מבפנים, להרגיש את ההנאה והשמחה הפשוטה, לפגוש את עצמכן שוב, ולחיות חיים מלאים כפי שהלב שלכן מבקש.</p>
       <a class="btn btn-ink" href="#contact" style="margin-top:.5rem">לתיאום פגישת הזנקה</a>
     </div>
   </section>
@@ -1300,7 +1306,7 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
       <article class="course">
         <div><div class="kicker">לנשים · 21 יום</div><h3>לברוא את מציאות חיי ב־21 יום</h3>
           <p>להחזיר את השקט הפנימי והשמחה לחיים. ב־5 צעדים מעשיים תגלי איך לשנות דפוסי חשיבה ולסגל התנהגות שתפגיש אותך עם עצמך שוב.</p>
-          <ul><li>44 סרטוני וידאו, עם סרטון הדרכה ומשימות מעשיות בכל יום</li><li>גישה קבועה לתוכן</li><li>שיטה מעשית שעבדה לנשים רבות</li><li>זמין בכל מכשיר ומכל מקום</li></ul></div>
+          <ul><li>44 סרטוני וידאו, עם סרטון הדרכה ומשימות מעשיות בכל יום</li><li>גישה קבועה לתוכן</li><li>שיטה מעשית שעבדה לנשים רבות</li><li>זמין בכל מכשיר ומכל מקום</li></ul><p>בסיום הקורס תרגישו בשינוי שחל בכן, תדעו מה אתן רוצות ותהיו קשובות לעצמכן.</p></div>
         <div class="price"><strong>397</strong><small>ש״ח</small><a class="btn btn-ink" href="#contact">להרשמה</a></div>
       </article>
       <article class="course">
@@ -1347,13 +1353,13 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
   <section class="sec">
     <div class="wrap">
       <article class="course">
-        <div><div class="kicker">לנשים</div><h3>נולדת לזה</h3>
-          <p>לנשים שלא מוכנות לקבל את המצב כמו שהוא, ורוצות ליצור את החיים שחלמו עליהם, המקצוע, הזוגיות, המשפחה. נכיר את המחשבות שחוסמות אותנו, ניתן מקום לפחד ונתיידד איתו.</p>
+        <div><div class="kicker">לנשים</div><h3>לברוא את מציאות חיי לשקט פנימי ושמחת חיים ממגנטת</h3>
+          <p>בשיטת ״נולדת לזה״: לנשים שלא מוכנות לקבל את המצב כמו שהוא, ורוצות ליצור את החיים שחלמו עליהם, המקצוע, הזוגיות, המשפחה. נכיר את המחשבות שחוסמות אותנו, ניתן מקום לפחד ונתיידד איתו.</p>
           <ul class="ticks"><li>דיוק פנימי: מה אני רוצה באמת</li><li>מוטיבציית שיא, אנרגיות ומצב רוח</li><li>ניהול זמן וניצחון על דחיינות</li><li>קבלת החלטות אפקטיבית</li><li>ניהול רגשי</li></ul></div>
         <div class="price"><strong style="font-size:2rem">הרצאה</strong><small>לקהילות ולארגונים</small><a class="btn btn-ink" href="#contact">להזמנה</a></div>
       </article>
       <article class="course">
-        <div><div class="kicker">להורים</div><h3>לנוע מפחד לעוצמה</h3>
+        <div><div class="kicker">להורים</div><h3>לברוא את מציאות חיי ולנוע מפחד לעוצמה</h3>
           <p>אי אפשר למחוק את רגש הפחד, צריך ללמוד לנהל אותו. כלים להורים לעזור לילדים לנהל את הפחד, להפוך מחשבות מטרידות לנעימות ולסגל הרגלים של גיבורים.</p>
           <ul class="ticks"><li>ניהול מחשבות ואמונות</li><li>זיהוי מחשבה שלילית והחלפתה</li><li>איזון וויסות של עוצמת הרגש</li><li>שחרור הרגלים ישנים ואימוץ חדשים</li></ul></div>
         <div class="price"><strong style="font-size:2rem">הרצאה</strong><small>לבתי ספר ולהורים</small><a class="btn btn-ink" href="#contact">להזמנה</a></div>
@@ -1372,7 +1378,11 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
         <h2>כשהמחשבות לא מרפות</h2>
         <p>במצבים של פחד, כעס, עצב, או כשהכול סוער, השכל המודע אינו הכלי המתאים לניהול הרגשות. הדמיון יכול לעקוף אותו ולהעביר מסר ישירות לתת־המודע. הוא מסנכרן בין הגוף, המחשבה והרגש, עוזר להרפות מהדרמה שבלב ולהתחבר למה שאתם רוצים באמת.</p>
         <p class="muted">מחקרו של ריצ׳רד דיוידסון מאוניברסיטת ויסקונסין מצא אצל מתרגלי מדיטציה פעילות מוחית יוצאת דופן, הקשורה לחמלה כלפי עצמנו וכלפי אחרים.</p>
-        <p><b>למי זה מתאים?</b> לילדים, למתבגרים ולמבוגרים, גם בלי ניסיון קודם. אפשר להאזין גם בשינה.</p>
+        <p><b>למי זה מתאים?</b> לילדים, למתבגרים ולמבוגרים, גם אם מעולם לא תרגלתם, או שתרגלתם ולא הצלחתם. אפשר להאזין גם בשינה, כשהתת־מודע עובד.</p>
+        <h2 style="margin-top:2rem">בכוחו של הדמיון המודרך</h2>
+        <ul class="ticks"><li>ממקד את תשומת הלב בטוב, בשפע וביש, ולא בפחד</li><li>הופך את התחושה הפנימית משלילית לחיובית</li><li>משקיט את רעשי הרקע, לעבר שקט פנימי ושמחת חיים</li></ul>
+        <p>כשאנחנו שליליים, אנחנו מרחיקים מאיתנו אנשים ומתקשים לראות את מה שעושה לנו טוב. כשאנחנו חיוביים, אנחנו מושכים אלינו את מה שאנחנו רוצים לראות בחיינו.</p>
+        <p><b>דמיון מודרך הוא כלי טיפולי יעיל, והקניית הכלים לשימוש בו תסייע לכם ברגעים של רגשות קיצוניים, לחץ ומתח.</b></p>
       </div>
       <aside class="aside">
         <h3>מה הדמיון המודרך נותן</h3>
@@ -1396,13 +1406,13 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
   <div class="ph"><div class="wrap"><div class="crumb"><a href="#home">דף הבית</a> / המוצרים שלי</div><h1>המוצרים שלי</h1><p>כלי עזר שפיתחתי כדי לתרגל את הנלמד ולהשיג את מטרות הטיפול, ביומיום ובכל פעם שצריך.</p><span class="mark logo mk" aria-hidden="true"></span></div></div>
   <section class="sec">
     <div class="wrap prods">
-      <article class="prod"><span class="tag">משחק זיכרון · מגיל 6</span><h3>לנהל את הכעס</h3><p>דרכים ומיומנויות לתת לכעס מענה, לווסת ולאזן אותו, תוך פיתוח זיכרון וריכוז. כשמבינים מה מפעיל את הכעס, אפשר לבחור איך לנהל אותו.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
-      <article class="prod"><span class="tag">משחק זיכרון</span><h3>לנהל את הפחד</h3><p>לתת לפחד מענה, לאזן ולווסת אותו, כדי לנוע קדימה ולא להימנע מפעילות. מפתח זיכרון וריכוז.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
-      <article class="prod"><span class="tag">משחק מסלול · מגיל 6</span><h3>הקול והכול בראש</h3><p>איך להפוך מחשבה מטרידה, מפחידה או מכעיסה למחשבה נעימה. מתקדמים על הלוח אל המדליה ומרימים קלפי משימות.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
-      <article class="prod"><span class="tag">פנקס</span><h3>7 צעדים לשקט פנימי ושמחה</h3><p>שבעה כלים שיעזרו לך להרגיש שהחיים בשליטה ולהחזיר איזון, שקט ושמחת חיים.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
-      <article class="prod"><span class="tag">מחברת</span><h3>אני הגיבורה של חיי</h3><p>תיעוד המסע בחמישה צעדים: כמיהת הלב, ויסות רגשי, הכרת הטוב, תחושת שפע וחגיגת הצלחות.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
-      <article class="prod"><span class="tag">מחברת</span><h3>לברוא את מציאות חיי</h3><p>לכתוב בחופשיות את החלומות והדרכים אליהם, הפחדים, ההצלחות, השמחות והרעיונות.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
-      <article class="prod"><span class="tag">פנקס</span><h3>מנהלת את הזמן שלי</h3><p>לילדים ולמתבגרים, לארגן לימודים, מבחנים, חוגים וחברים. לנשים, לתעדף משימות ולפנות מקום לחלומות.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
+      <article class="prod"><span class="tag">מחברת</span><h3>אני הגיבורה של חיי</h3><p>מחברת שמתעדת את המסע ליצירת חייכן כפי שאתן רוצות באמת, בחמישה צעדים: כמיהת הלב, ויסות רגשי, להכיר את הטוב, להגדיל את תחושת השפע והיש, ולחגוג הצלחות.</p><p>היא מסייעת ביצירת שגרת הרגלים קבועה, כך שכל הצלחה הופכת להרגל. לחיי המסע שלך, הגיבורה שבך.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
+      <article class="prod"><span class="tag">מחברת</span><h3>לברוא את מציאות חיי</h3><p>לחלום. להאמין. לממש. מחברת לכתוב בה בחופשיות את החלומות שלך והדרכים להגיע אליהם.</p><p>מה כדאי לכתוב: הרהורי לב, פחדים וחששות, דאגות היום, וגם ההצלחות, השמחות והאהבות. כל רעיון, גם אם הוא נראה שטותי.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
+      <article class="prod"><span class="tag">פנקס</span><h3>7 צעדים לשקט פנימי ושמחת חיים ממגנטת</h3><p>שבעה כלים שיעזרו לכן להרגיש שהחיים בשליטה: שהם לא מנהלים אתכן, אלא אתן מנהלות אותם.</p><p>נועדתן לחיות מתוך שחרור ואהבה, עם חיוכים ואיכות חיים, ולא מפירורים של אנרגיה.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
+      <article class="prod"><span class="tag">פנקס</span><h3>ניהול זמן: מנהלת את הזמן שלי</h3><p>נולד מתוך עבודה עם ילדים, מתבגרים ונשים. לילדים ולמתבגרים, לארגן לימודים, מבחנים, חוגים וחברים.</p><p>לנשים, לתעדף משימות ולהכניס ליומן גם את הדברים החשובים באמת, ואת החלומות. אל תשאלו אם יש לכן זמן, אלא איך אתן משתמשות בזמן שיש.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
+      <article class="prod"><span class="tag">משחק זיכרון</span><h3>לנהל את הפחד</h3><p>משחק לוויסות רגשי, שמלמד ילדים דרכים לתת לפחד מענה, לאזן ולווסת אותו, כדי לנוע קדימה ולא להימנע מפעילות.</p><p>מפתח זיכרון וריכוז, ומטמיע מגוון דרכים לאזן את הרגש. אתם הגיבורים של חייכם.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
+      <article class="prod"><span class="tag">משחק זיכרון · מגיל 6</span><h3>לנהל את הכעס</h3><p>משחק לוויסות רגשי, שמלמד ילדים לתת לכעס מענה, לווסת ולאזן אותו, בלי להשליך אותו על האחר.</p><p>לכעס יש כוונה חיובית: הוא מתריע על אי צדק. כשמבינים מה מפעיל אותו, אפשר לבחור איך לנהל אותו.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
+      <article class="prod"><span class="tag">משחק מסלול · מגיל 6</span><h3>הקול והכל בראש</h3><p>לתרגול חשיבה חיובית וויסות רגשי: איך להפוך מחשבה מטרידה, מפחידה או מכעיסה למחשבה נעימה.</p><p>המשתתפים מתקדמים על הלוח אל המדליה ומרימים קלפי משימות. המשחק מעודד שיח על רגשות ומפתח מודעות עצמית.</p><a class="btn btn-out" href="https://wa.me/972547533995?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">להזמנה בוואטסאפ</a></article>
     </div>
   </section>
 </div>
@@ -1412,6 +1422,8 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
   <div class="ph"><div class="wrap"><div class="crumb"><a href="#home">דף הבית</a> / הבלוג</div><h1>הבלוג שלי</h1><p>מחשבות וכלים על פחדים, ויסות רגשי, הורות ובחירה בעצמך.</p><span class="mark logo mk" aria-hidden="true"></span></div></div>
   <section class="sec">
     <div class="wrap posts">
+      <a class="post-card" href="#post-born"><h3>נולדת לזה!</h3><p>ליקום יש ייעוד עבורך. איך בוחרים חלום אחד ומתחילים ללכת אליו.</p><span class="more">לקריאה</span></a>
+      <a class="post-card" href="#post-calm"><h3>מתגעגעת לשקט ושלווה?</h3><p>קחי נשימה עמוקה ובחרי בעצמך: שלושה כללים לאיזון ושקט פנימי.</p><span class="more">לקריאה</span></a>
       <a class="post-card" href="#post-monsters"><h3>מפלצות בארון</h3><p>מה עושים כשהילד מספר על מפלצת מתחת למיטה? ארבעה שלבים להקשבה לפחד.</p><span class="more">לקריאה</span></a>
       <a class="post-card" href="#post-fear"><h3>לא לפחד מהפחד</h3><p>ויסות וניהול פחדים אצל ילדים רגישים, ועקרון ההשהיה.</p><span class="more">לקריאה</span></a>
       <a class="post-card" href="#post-masks"><h3>בלי מסכות</h3><p>כשאת שמחה מבחוץ ועצובה מבפנים, איך לסנכרן בין החוץ לפנים.</p><span class="more">לקריאה</span></a>
@@ -1434,7 +1446,7 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
     </ul>
     <p>יש אנשים שהחיים קורים להם, ויש כאלה שיוצרים את חייהם. היי זאת שיוצרת את חייה.</p>
     <div class="pause"><b>מ־1 עד 10.</b> קחי נשימה עמוקה ובדקי: כמה שקט פנימי יש בחייך עכשיו? כמה אנרגיה? כמה שמחה? פני לעצמך זמן בשבוע.</div>
-    <div class="guide"><p>מדריך לשקט פנימי ושמחת חיים ממגנטת</p><a class="btn btn-ink" href="https://tamiadler1.ravpage.co.il/quiet_back_to_my_life" target="_blank" rel="noopener">לקבלת המדריך</a></div>
+    <div class="guide"><p>מדריך לשקט פנימי ושמחת חיים ממגנטת</p><a class="btn btn-ink" href="https://bit.ly/3skhf0l" target="_blank" rel="noopener">לקבלת המדריך</a></div>
     <p class="date">10 במאי 2022</p>
   </article></div></section>
 </div>
@@ -1486,8 +1498,39 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
     <p>הפעם תחליטי לעשות את הצעד ולבחור בעצמך. לכל אחת מגיע יותר, ולכל אחת יש את ה״יותר״ שלה: במשפחה, בקריירה, לכתוב ספר, ללכת לים, לחזור לרקוד, להכניס שמחה.</p>
     <h2>חיי את הרגע</h2>
     <p>החיים הם כאן ועכשיו. בני את חייך מתוך מה שגורם ללב שלך לחייך עכשיו. כולנו חווים אתגרים, קושי וכאב, אבל התקווה היא בחירה.</p>
+    <div class="guide"><p>מדריך לשקט פנימי ושמחת חיים ממגנטת: להחזיר את השליטה לידיים שלך</p><a class="btn btn-ink" href="https://bit.ly/3skhf0l" target="_blank" rel="noopener">לקבלת המדריך</a></div>
     <div class="pause">קחי נשימה עמוקה ובדקי: מהו ה״הלוואי״ שיכניס שמחה לחייך? איזו פעולה, קטנה או גדולה, את יכולה לעשות כבר עכשיו?</div>
     <p class="date">10 במאי 2022</p>
+  </article></div></section>
+</div>
+
+<div class="view" id="v-post-born">
+  <div class="ph"><div class="wrap"><div class="crumb"><a href="#blog">הבלוג</a></div><h1>נולדת לזה!</h1><p>ליקום יש ייעוד עבורך. הפכי למה שנועדת להיות.</p></div></div>
+  <section class="sec"><div class="wrap measure"><article class="post">
+    <p>לכל אחת יש חלום, משאלה, ״הלוואי ש...״. חשבי על הסיפוק שהרגשת כשהשגת משהו שרצית מאוד, גם אם היה קטן. מטרה היא אנרגיית החיים: להיכנס לכושר, להיות סבלנית לילדים, להתפתח מקצועית, או ללכת על שפת הים ברגליים יחפות. כשיש לך מטרה, את מנווטת את החיים ולא נותנת להם לסחוף אותך.</p>
+    <h2>איך תתחילי?</h2>
+    <p>את בטח יודעת מה את לא רוצה: לא לנשנש, לא לפחד, לא זוגיות מנומנמת, לא להיות במינוס. אז מה את כן רוצה? בחרי חלום אחד והתמקדי בו. כשרציתי גם לעשות ספורט וגם ללמוד, אחרי שבוע בלבד הרגשתי עומס וייאוש. כשהכל חשוב, שום דבר לא חשוב.</p>
+    <h2>בחמש דקות</h2>
+    <p>דמייני את הגרסה הטובה ביותר שלך בעוד חמש שנים: מי את, מה את עושה, איך את נראית, איך את מתנהלת, איך את מרגישה, ומי נמצא איתך במסע.</p>
+    <div class="pause"><b>מ־1 עד 10.</b> כמה את מאושרת? כמה אנרגיה יש לך? כמה את הגרסה הכי טובה שלך? הקדישי זמן לחשוב ולכתוב.</div>
+    <h2>ואם ״אין לי מטרה״?</h2>
+    <p>גם לי לקח זמן להבין מה אני רוצה. ידעתי לומר ש״אני לא רוצה לפחד״, ובלב פנימה רציתי עצמאות כלכלית כדי לפתוח קליניקה לטיפול רגשי בילדים ונשים. חשבי מהו ה״הלוואי״ שלך, החלום שעולה באופן טבעי.</p>
+    <p>לא משנה בת כמה את או כמה ניסיון יש לך. מגיע לך, והכל אפשרי עבורך. החלומות שלך הם מפת הדרכים לייעוד שלך. היי האישה שחלמה, שהאמינה והשיגה!</p>
+    <div class="guide"><p>מדריך לשקט פנימי ושמחת חיים ממגנטת: להחזיר את השליטה לידיים שלך</p><a class="btn btn-ink" href="https://bit.ly/3skhf0l" target="_blank" rel="noopener">לקבלת המדריך</a></div>
+  </article></div></section>
+</div>
+
+<div class="view" id="v-post-calm">
+  <div class="ph"><div class="wrap"><div class="crumb"><a href="#blog">הבלוג</a></div><h1>מתגעגעת לשקט ושלווה?</h1><p>קחי נשימה עמוקה, ובחרי בעצמך.</p></div></div>
+  <section class="sec"><div class="wrap measure"><article class="post">
+    <p>לכולנו יש רגעים שבהם אנחנו מרגישות בבטן שמשהו כאן לא נכון. את יודעת בדיוק מה את רוצה לעצמך: להיות הורה מסור ונוכח, לקיים זוגיות מאושרת, להתקדם בקריירה ולמצוא זמן לעצמך.</p>
+    <h2>אז איך זה לא קורה?</h2>
+    <p>לפעמים, גם כשהמטרות ברורות, את מרגישה חסרת מנוחה ולא מאוזנת. לרוב הסיבה היא גלישה בין המטרות: כשאני לוקחת עבודה הביתה, הזמן עם המשפחה מצטמצם, וכשאני נותנת הכל למשפחה ולעבודה, לא נשאר זמן לעצמי. העומס מצמצם את המשאבים הרגשיים, ובמקום להיות נוכחת את רק רוצה ״לתקתק״.</p>
+    <h2>לרכוש שלווה</h2>
+    <p>היכולת לאזן ולהגיע לשקט פנימי היא יכולת נלמדת. בהתחלה תני מקום לכל הרגשות, לכעס, לפחד, לעצב ולאשמה, והיי סלחנית לעצמך. שלושת הכללים שלך:</p>
+    <ul class="ticks"><li><b>את לא מושלמת, את שלמה.</b> אמא לא צריכה להיות מושלמת, אלא אנושית.</li><li><b>נפלת, קומי.</b> מחר תתחילי מבראשית. הלקאה עצמית מיותרת.</li><li><b>הכל אפשרי.</b> תמיד יש מוצא, גם כשנראה שקשה מאוד.</li></ul>
+    <div class="pause"><b>קחי נשימה.</b> מה הדבר שאת כל כך רוצה לעצמך? נסחי אותו באופן חיובי ומדיד, וכתבי למה חשוב לך להשיג אותו. הפעם את לא מוותרת על עצמך, אלא בוחרת בך.</div>
+    <div class="guide"><p>מדריך לשקט פנימי ושמחת חיים ממגנטת: להחזיר את השליטה לידיים שלך</p><a class="btn btn-ink" href="https://bit.ly/3skhf0l" target="_blank" rel="noopener">לקבלת המדריך</a></div>
   </article></div></section>
 </div>
 
@@ -1528,6 +1571,13 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
 
 <a class="wa-float" href="https://wa.me/972547533995" target="_blank" rel="noopener" aria-label="שליחת הודעה בוואטסאפ"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.7L2.3 21.8l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.5-.7-2.3-1.5-.6-.6-1-1.2-1.2-1.6-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2 .7 2.8.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.2z"/></svg></a>
 
+<script>/* hero hand-off: the hero stops at the frame where its text fades (0.4 viewport of travel, as in the working version).
+   On phones it stays pinned a little longer while the testimonials rise over its empty lower half. */
+(function(){var a=document.querySelector("#v-home .h-act");if(!a)return;var m=matchMedia("(max-width:860px)").matches,T=m?0.85:0.4,k=0.5/T;
+a.setAttribute("data-sc-span",(1+T).toFixed(2));a.style.setProperty("--hk",(T/0.5).toFixed(3));
+a.querySelectorAll("[data-sc-cue]").forEach(function(e){var v=e.getAttribute("data-sc-cue").split(" ").map(Number);v[1]=+(v[1]+(0.4/T-0.8)).toFixed(3);e.setAttribute("data-sc-cue",v.join(" "))});
+if(m){var p=document.querySelector("#v-home .p-act");p.style.marginTop=Math.round(-0.55*innerHeight)+"px";p.style.position="relative";p.style.zIndex="2"}})();
+</script>
 <script>/* scrollcraft engine (verbatim) */
 /* ============================================================================
    scrollcraft: a scroll-driven interaction runtime
@@ -2816,7 +2866,7 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
 </script>
 <script>
 (function(){
-  var views=["home","about","women","kids","online-courses","workshops","lectures","imagery","products","blog","post-masks","post-fear","post-monsters","post-more","contact"];
+  var views=["home","about","women","kids","online-courses","workshops","lectures","imagery","products","blog","post-masks","post-fear","post-monsters","post-more","post-born","post-calm","contact"];
   function closeAll(){document.querySelectorAll("nav.main li.open").forEach(function(li){li.classList.remove("open");li.querySelector(".dd").setAttribute("aria-expanded","false")})}
   function closeMenu(){}
   function show(){
@@ -2893,7 +2943,7 @@ body.home .nav-root{pointer-events:auto;position:relative;z-index:2}
       var g=cl(y/Math.max(1,ct-vh*.15));
       if(Math.abs(g-lastG)>.0005){lastG=g;grow.style.transform='scaleY('+g.toFixed(4)+')';
         for(var i=0;i<leaves.length;i++){leaves[i].classList.toggle('open',g>=parseFloat(leaves[i].dataset.at))}}
-      var cp=parseFloat(close.style.getPropertyValue('--sc-p'))||0,k=cl((cp-.04)*2.6);
+      var cp=parseFloat(close.style.getPropertyValue('--sc-p'))||0,k=cl((cp-.02)*3.2);
       if(Math.abs(k-lastK)>.0005){lastK=k;spine.style.setProperty('--k',k.toFixed(4))}
       var mid=vh*.5,pick=null;
       for(var j=0;j<secs.length;j++){var r=secs[j].getBoundingClientRect();if(r.top<=mid&&r.bottom>mid){pick=secs[j];break}}
@@ -3093,7 +3143,7 @@ Error generating stack: `+i.message+`
 טלפון: ${e.phone}
 אימייל: ${e.email}
 
-${e.msg}`}function l(c){if(c.preventDefault(),!i()){wu.error("חסרים כמה פרטים בטופס.");return}location.href=`mailto:adler.tami@gmail.com?subject=${encodeURIComponent("פנייה מהאתר: "+e.name)}&body=${encodeURIComponent(s())}`,wu.success("ההודעה נפתחה בתוכנת הדואר.",{description:"נותר רק ללחוץ ״שליחה״."})}function a(){if(!i()){wu.error("חסרים כמה פרטים בטופס.");return}window.open(`${jx}?text=${encodeURIComponent(s())}`,"_blank","noopener")}return g.jsxs(Ex,{className:"rounded-[2rem]",children:[g.jsxs(bx,{children:[g.jsx(Nx,{className:"font-display text-4xl font-normal",children:"השאירו הודעה"}),g.jsx(_x,{children:"לתיאום פגישת הזנקה, להרשמה לקורס או להזמנת מוצר."})]}),g.jsxs("form",{onSubmit:l,noValidate:!0,children:[g.jsx(Px,{children:g.jsxs(Mx,{children:[g.jsxs(xs,{"data-invalid":n.name?!0:void 0,children:[g.jsx(ks,{htmlFor:"cf-name",children:"שם"}),g.jsx(bu,{id:"cf-name",autoComplete:"name",value:e.name,onChange:o("name"),"aria-invalid":n.name?!0:void 0,required:!0}),n.name&&g.jsx(fh,{children:n.name})]}),g.jsxs(xs,{children:[g.jsx(ks,{htmlFor:"cf-phone",children:"טלפון"}),g.jsx(bu,{id:"cf-phone",type:"tel",inputMode:"tel",autoComplete:"tel",dir:"ltr",className:"text-right",value:e.phone,onChange:o("phone")})]}),g.jsxs(xs,{children:[g.jsx(ks,{htmlFor:"cf-email",children:"אימייל"}),g.jsx(bu,{id:"cf-email",type:"email",autoComplete:"email",dir:"ltr",className:"text-right",value:e.email,onChange:o("email")})]}),g.jsxs(xs,{"data-invalid":n.msg?!0:void 0,children:[g.jsx(ks,{htmlFor:"cf-msg",children:"הודעה"}),g.jsx(Ox,{id:"cf-msg",rows:5,value:e.msg,onChange:o("msg"),"aria-invalid":n.msg?!0:void 0,required:!0}),n.msg?g.jsx(fh,{children:n.msg}):g.jsx(Ix,{children:"ההודעה תיפתח בתוכנת הדואר או בוואטסאפ, מוכנה לשליחה."})]})]})}),g.jsxs(Rx,{className:"mt-6 flex flex-wrap gap-3",children:[g.jsxs(Oo,{type:"submit",size:"lg",className:"rounded-full",children:[g.jsx(Zw,{"data-icon":"inline-start"}),"שליחה במייל"]}),g.jsxs(Oo,{type:"button",variant:"outline",size:"lg",className:"rounded-full",onClick:a,children:[g.jsx(qw,{"data-icon":"inline-start"}),"שליחה בוואטסאפ"]})]})]})]})}function Lx({className:e,children:t,viewport:n=!0,...r}){return g.jsxs(vw,{"data-slot":"navigation-menu","data-viewport":n,className:X("group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",e),...r,children:[t,n&&g.jsx(Vx,{})]})}function Ax({className:e,...t}){return g.jsx(ww,{"data-slot":"navigation-menu-list",className:X("group flex flex-1 list-none items-center justify-center gap-1",e),...t})}function vh({className:e,...t}){return g.jsx(Sw,{"data-slot":"navigation-menu-item",className:X("relative",e),...t})}const gh=xu("group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-[color,box-shadow] outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-accent/50 data-[state=open]:text-accent-foreground data-[state=open]:hover:bg-accent data-[state=open]:focus:bg-accent");function Fx({className:e,children:t,...n}){return g.jsxs(Cw,{"data-slot":"navigation-menu-trigger",className:X(gh(),"group",e),...n,children:[t," ",g.jsx(Kw,{className:"relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180","aria-hidden":"true"})]})}function $x({className:e,...t}){return g.jsx(bw,{"data-slot":"navigation-menu-content",className:X("top-0 left-0 w-full p-2 pr-2.5 data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 data-[motion^=from-]:animate-in data-[motion^=from-]:fade-in data-[motion^=to-]:animate-out data-[motion^=to-]:fade-out md:absolute md:w-auto","group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-md group-data-[viewport=false]/navigation-menu:border group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:shadow group-data-[viewport=false]/navigation-menu:duration-200 **:data-[slot=navigation-menu-link]:focus:ring-0 **:data-[slot=navigation-menu-link]:focus:outline-none group-data-[viewport=false]/navigation-menu:data-[state=closed]:animate-out group-data-[viewport=false]/navigation-menu:data-[state=closed]:fade-out-0 group-data-[viewport=false]/navigation-menu:data-[state=closed]:zoom-out-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:animate-in group-data-[viewport=false]/navigation-menu:data-[state=open]:fade-in-0 group-data-[viewport=false]/navigation-menu:data-[state=open]:zoom-in-95",e),...t})}function Vx({className:e,...t}){return g.jsx("div",{className:X("absolute top-full left-0 isolate z-50 flex justify-center"),children:g.jsx(Pw,{"data-slot":"navigation-menu-viewport",className:X("origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",e),...t})})}function yh({className:e,...t}){return g.jsx(Ew,{"data-slot":"navigation-menu-link",className:X("flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground data-[active=true]:hover:bg-accent data-[active=true]:focus:bg-accent [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground",e),...t})}function Bx({...e}){return g.jsx(V0,{"data-slot":"sheet",...e})}function Ux({...e}){return g.jsx(U0,{"data-slot":"sheet-trigger",...e})}function Wx({...e}){return g.jsx(H0,{"data-slot":"sheet-portal",...e})}function Hx({className:e,...t}){return g.jsx(G0,{"data-slot":"sheet-overlay",className:X("fixed inset-0 z-50 bg-black/50 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0",e),...t})}function Gx({className:e,children:t,side:n="right",showCloseButton:r=!0,...o}){return g.jsxs(Wx,{children:[g.jsx(Hx,{}),g.jsxs(Y0,{"data-slot":"sheet-content",className:X("fixed z-50 flex flex-col gap-4 bg-background shadow-lg transition ease-in-out data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:animate-in data-[state=open]:duration-500",n==="right"&&"inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",n==="left"&&"inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",n==="top"&&"inset-x-0 top-0 h-auto border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",n==="bottom"&&"inset-x-0 bottom-0 h-auto border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",e),...o,children:[t,r&&g.jsxs(tw,{className:"absolute top-4 end-4 rounded-xs opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none data-[state=open]:bg-secondary",children:[g.jsx(n1,{className:"size-4"}),g.jsx("span",{className:"sr-only",children:"Close"})]})]})]})}function Kx({className:e,...t}){return g.jsx("div",{"data-slot":"sheet-header",className:X("flex flex-col gap-1.5 p-4",e),...t})}function Qx({className:e,...t}){return g.jsx("div",{"data-slot":"sheet-footer",className:X("mt-auto flex flex-col gap-2 p-4",e),...t})}function Yx({className:e,...t}){return g.jsx(J0,{"data-slot":"sheet-title",className:X("font-semibold text-foreground",e),...t})}function Xx({className:e,...t}){return g.jsx(q0,{"data-slot":"sheet-description",className:X("text-sm text-muted-foreground",e),...t})}const Zx=["home","about","women","kids","online-courses","workshops","lectures","imagery","products","blog","post-masks","post-fear","post-monsters","post-more","contact"];function wh(){const e=(location.hash||"").slice(1);return Zx.includes(e)?e:"home"}function Jx(){const[e,t]=v.useState(wh);return v.useEffect(()=>{const n=()=>t(wh());return window.addEventListener("hashchange",n),()=>window.removeEventListener("hashchange",n)},[]),e}function qx(e){const[t,n]=v.useState(()=>matchMedia(e).matches);return v.useEffect(()=>{const r=matchMedia(e),o=()=>n(r.matches);return r.addEventListener("change",o),()=>r.removeEventListener("change",o)},[e]),t}function Cs(e,t){return"#"+e===t}function ek({route:e}){const t=n=>g.jsx(vh,{children:g.jsx(yh,{asChild:!0,active:Cs(e,n.href),className:gh(),children:g.jsx("a",{href:n.href,children:n.label})})},n.href);return g.jsxs("div",{className:"flex items-center gap-2",children:[g.jsx(Lx,{dir:"rtl","aria-label":"ניווט ראשי",children:g.jsxs(Ax,{children:[ph.map(t),mh.map(n=>g.jsxs(vh,{children:[g.jsx(Fx,{children:n.label}),g.jsx($x,{children:g.jsx("ul",{className:"grid w-[22rem] gap-1 p-1",children:n.items.map(r=>g.jsx("li",{children:g.jsx(yh,{asChild:!0,active:Cs(e,r.href),children:g.jsxs("a",{href:r.href,className:"flex flex-col gap-1",children:[g.jsx("span",{className:"font-semibold",children:r.label}),g.jsx("span",{className:"text-muted-foreground text-sm leading-snug",children:r.description})]})})},r.href))})})]},n.label)),hh.map(t)]})}),g.jsx(Oo,{asChild:!0,className:"rounded-full",children:g.jsx("a",{href:Ss.href,children:Ss.label})})]})}function tk({route:e,floating:t}){const[n,r]=v.useState(!1);v.useEffect(()=>r(!1),[e]);const o=(i,s=!1)=>g.jsx("a",{href:i.href,"aria-current":Cs(e,i.href)?"page":void 0,onClick:()=>r(!1),className:X("hover:bg-accent focus-visible:ring-ring/50 flex rounded-md px-3 py-2.5 text-lg outline-none transition-colors focus-visible:ring-[3px]",s&&"text-base",Cs(e,i.href)&&"bg-secondary font-semibold"),children:i.label},i.href);return g.jsxs(Bx,{open:n,onOpenChange:r,children:[g.jsx(Ux,{asChild:!0,children:g.jsx(Oo,{variant:"outline",size:"icon","aria-label":"פתיחת תפריט",className:X("rounded-xl",t&&"bg-background/70 backdrop-blur"),children:g.jsx(Jw,{})})}),g.jsxs(Gx,{side:"right",className:"w-[min(22rem,88vw)] gap-0 overflow-y-auto",dir:"rtl",children:[g.jsxs(Kx,{className:"text-right",children:[g.jsx(Yx,{className:"font-display text-3xl font-normal",children:"תפריט"}),g.jsx(Xx,{children:"ייעוץ חינוכי, NLP, CBT ודמיון מודרך"})]}),g.jsxs("nav",{"aria-label":"ניווט ראשי",className:"flex flex-col gap-1 px-4",children:[ph.map(i=>o(i)),mh.map(i=>g.jsxs("div",{className:"flex flex-col gap-0.5",children:[g.jsx(dh,{className:"my-2"}),g.jsx("p",{className:"text-muted-foreground px-3 pb-1 text-sm font-semibold",children:i.label}),i.items.map(s=>o(s,!0))]},i.label)),g.jsx(dh,{className:"my-2"}),hh.map(i=>o(i))]}),g.jsx(Qx,{children:g.jsx(Oo,{asChild:!0,size:"lg",className:"rounded-full",children:g.jsx("a",{href:Ss.href,onClick:()=>r(!1),children:Ss.label})})})]})]})}function nk(){const e=Jx(),t=qx("(min-width: 981px)"),n=e==="home";return t&&!n?g.jsx(ek,{route:e}):g.jsx(tk,{route:e,floating:n})}function Nu(e,t){const n=document.getElementById(e);n&&Jf(n).render(g.jsx(zw,{dir:"rtl",children:t}))}function xh(){Nu("nav-root",g.jsx(nk,{})),Nu("contact-root",g.jsx(zx,{})),Nu("toast-root",g.jsx(D1,{position:"bottom-center",dir:"rtl",richColors:!1}))}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",xh):xh()})();
+${e.msg}`}function l(c){if(c.preventDefault(),!i()){wu.error("חסרים כמה פרטים בטופס.");return}location.href=`mailto:adler.tami@gmail.com?subject=${encodeURIComponent("פנייה מהאתר: "+e.name)}&body=${encodeURIComponent(s())}`,wu.success("ההודעה נפתחה בתוכנת הדואר.",{description:"נותר רק ללחוץ ״שליחה״."})}function a(){if(!i()){wu.error("חסרים כמה פרטים בטופס.");return}window.open(`${jx}?text=${encodeURIComponent(s())}`,"_blank","noopener")}return g.jsxs(Ex,{className:"rounded-[2rem]",children:[g.jsxs(bx,{children:[g.jsx(Nx,{className:"font-display text-4xl font-normal",children:"השאירו הודעה"}),g.jsx(_x,{children:"לתיאום פגישת הזנקה, להרשמה לקורס או להזמנת מוצר."})]}),g.jsxs("form",{onSubmit:l,noValidate:!0,children:[g.jsx(Px,{children:g.jsxs(Mx,{children:[g.jsxs(xs,{"data-invalid":n.name?!0:void 0,children:[g.jsx(ks,{htmlFor:"cf-name",children:"שם"}),g.jsx(bu,{id:"cf-name",autoComplete:"name",value:e.name,onChange:o("name"),"aria-invalid":n.name?!0:void 0,required:!0}),n.name&&g.jsx(fh,{children:n.name})]}),g.jsxs(xs,{children:[g.jsx(ks,{htmlFor:"cf-phone",children:"טלפון"}),g.jsx(bu,{id:"cf-phone",type:"tel",inputMode:"tel",autoComplete:"tel",dir:"ltr",className:"text-right",value:e.phone,onChange:o("phone")})]}),g.jsxs(xs,{children:[g.jsx(ks,{htmlFor:"cf-email",children:"אימייל"}),g.jsx(bu,{id:"cf-email",type:"email",autoComplete:"email",dir:"ltr",className:"text-right",value:e.email,onChange:o("email")})]}),g.jsxs(xs,{"data-invalid":n.msg?!0:void 0,children:[g.jsx(ks,{htmlFor:"cf-msg",children:"הודעה"}),g.jsx(Ox,{id:"cf-msg",rows:5,value:e.msg,onChange:o("msg"),"aria-invalid":n.msg?!0:void 0,required:!0}),n.msg?g.jsx(fh,{children:n.msg}):g.jsx(Ix,{children:"ההודעה תיפתח בתוכנת הדואר או בוואטסאפ, מוכנה לשליחה."})]})]})}),g.jsxs(Rx,{className:"mt-6 flex flex-wrap gap-3",children:[g.jsxs(Oo,{type:"submit",size:"lg",className:"rounded-full",children:[g.jsx(Zw,{"data-icon":"inline-start"}),"שליחה במייל"]}),g.jsxs(Oo,{type:"button",variant:"outline",size:"lg",className:"rounded-full",onClick:a,children:[g.jsx(qw,{"data-icon":"inline-start"}),"שליחה בוואטסאפ"]})]})]})]})}function Lx({className:e,children:t,viewport:n=!0,...r}){return g.jsxs(vw,{"data-slot":"navigation-menu","data-viewport":n,className:X("group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",e),...r,children:[t,n&&g.jsx(Vx,{})]})}function Ax({className:e,...t}){return g.jsx(ww,{"data-slot":"navigation-menu-list",className:X("group flex flex-1 list-none items-center justify-center gap-1",e),...t})}function vh({className:e,...t}){return g.jsx(Sw,{"data-slot":"navigation-menu-item",className:X("relative",e),...t})}const gh=xu("group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-[color,box-shadow] outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-accent/50 data-[state=open]:text-accent-foreground data-[state=open]:hover:bg-accent data-[state=open]:focus:bg-accent");function Fx({className:e,children:t,...n}){return g.jsxs(Cw,{"data-slot":"navigation-menu-trigger",className:X(gh(),"group",e),...n,children:[t," ",g.jsx(Kw,{className:"relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180","aria-hidden":"true"})]})}function $x({className:e,...t}){return g.jsx(bw,{"data-slot":"navigation-menu-content",className:X("top-0 left-0 w-full p-2 pr-2.5 data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 data-[motion^=from-]:animate-in data-[motion^=from-]:fade-in data-[motion^=to-]:animate-out data-[motion^=to-]:fade-out md:absolute md:w-auto","group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-md group-data-[viewport=false]/navigation-menu:border group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:shadow group-data-[viewport=false]/navigation-menu:duration-200 **:data-[slot=navigation-menu-link]:focus:ring-0 **:data-[slot=navigation-menu-link]:focus:outline-none group-data-[viewport=false]/navigation-menu:data-[state=closed]:animate-out group-data-[viewport=false]/navigation-menu:data-[state=closed]:fade-out-0 group-data-[viewport=false]/navigation-menu:data-[state=closed]:zoom-out-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:animate-in group-data-[viewport=false]/navigation-menu:data-[state=open]:fade-in-0 group-data-[viewport=false]/navigation-menu:data-[state=open]:zoom-in-95",e),...t})}function Vx({className:e,...t}){return g.jsx("div",{className:X("absolute top-full left-0 isolate z-50 flex justify-center"),children:g.jsx(Pw,{"data-slot":"navigation-menu-viewport",className:X("origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",e),...t})})}function yh({className:e,...t}){return g.jsx(Ew,{"data-slot":"navigation-menu-link",className:X("flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground data-[active=true]:hover:bg-accent data-[active=true]:focus:bg-accent [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground",e),...t})}function Bx({...e}){return g.jsx(V0,{"data-slot":"sheet",...e})}function Ux({...e}){return g.jsx(U0,{"data-slot":"sheet-trigger",...e})}function Wx({...e}){return g.jsx(H0,{"data-slot":"sheet-portal",...e})}function Hx({className:e,...t}){return g.jsx(G0,{"data-slot":"sheet-overlay",className:X("fixed inset-0 z-50 bg-black/50 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0",e),...t})}function Gx({className:e,children:t,side:n="right",showCloseButton:r=!0,...o}){return g.jsxs(Wx,{children:[g.jsx(Hx,{}),g.jsxs(Y0,{"data-slot":"sheet-content",className:X("fixed z-50 flex flex-col gap-4 bg-background shadow-lg transition ease-in-out data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:animate-in data-[state=open]:duration-500",n==="right"&&"inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",n==="left"&&"inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",n==="top"&&"inset-x-0 top-0 h-auto border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",n==="bottom"&&"inset-x-0 bottom-0 h-auto border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",e),...o,children:[t,r&&g.jsxs(tw,{className:"absolute top-4 end-4 rounded-xs opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none data-[state=open]:bg-secondary",children:[g.jsx(n1,{className:"size-4"}),g.jsx("span",{className:"sr-only",children:"Close"})]})]})]})}function Kx({className:e,...t}){return g.jsx("div",{"data-slot":"sheet-header",className:X("flex flex-col gap-1.5 p-4",e),...t})}function Qx({className:e,...t}){return g.jsx("div",{"data-slot":"sheet-footer",className:X("mt-auto flex flex-col gap-2 p-4",e),...t})}function Yx({className:e,...t}){return g.jsx(J0,{"data-slot":"sheet-title",className:X("font-semibold text-foreground",e),...t})}function Xx({className:e,...t}){return g.jsx(q0,{"data-slot":"sheet-description",className:X("text-sm text-muted-foreground",e),...t})}const Zx=["home","about","women","kids","online-courses","workshops","lectures","imagery","products","blog","post-masks","post-fear","post-monsters","post-more","post-born","post-calm","contact"];function wh(){const e=(location.hash||"").slice(1);return Zx.includes(e)?e:"home"}function Jx(){const[e,t]=v.useState(wh);return v.useEffect(()=>{const n=()=>t(wh());return window.addEventListener("hashchange",n),()=>window.removeEventListener("hashchange",n)},[]),e}function qx(e){const[t,n]=v.useState(()=>matchMedia(e).matches);return v.useEffect(()=>{const r=matchMedia(e),o=()=>n(r.matches);return r.addEventListener("change",o),()=>r.removeEventListener("change",o)},[e]),t}function Cs(e,t){return"#"+e===t}function ek({route:e}){const t=n=>g.jsx(vh,{children:g.jsx(yh,{asChild:!0,active:Cs(e,n.href),className:gh(),children:g.jsx("a",{href:n.href,children:n.label})})},n.href);return g.jsxs("div",{className:"flex items-center gap-2",children:[g.jsx(Lx,{dir:"rtl","aria-label":"ניווט ראשי",children:g.jsxs(Ax,{children:[ph.map(t),mh.map(n=>g.jsxs(vh,{children:[g.jsx(Fx,{children:n.label}),g.jsx($x,{children:g.jsx("ul",{className:"grid w-[22rem] gap-1 p-1",children:n.items.map(r=>g.jsx("li",{children:g.jsx(yh,{asChild:!0,active:Cs(e,r.href),children:g.jsxs("a",{href:r.href,className:"flex flex-col gap-1",children:[g.jsx("span",{className:"font-semibold",children:r.label}),g.jsx("span",{className:"text-muted-foreground text-sm leading-snug",children:r.description})]})})},r.href))})})]},n.label)),hh.map(t)]})}),g.jsx(Oo,{asChild:!0,className:"rounded-full",children:g.jsx("a",{href:Ss.href,children:Ss.label})})]})}function tk({route:e,floating:t}){const[n,r]=v.useState(!1);v.useEffect(()=>r(!1),[e]);const o=(i,s=!1)=>g.jsx("a",{href:i.href,"aria-current":Cs(e,i.href)?"page":void 0,onClick:()=>r(!1),className:X("hover:bg-accent focus-visible:ring-ring/50 flex rounded-md px-3 py-2.5 text-lg outline-none transition-colors focus-visible:ring-[3px]",s&&"text-base",Cs(e,i.href)&&"bg-secondary font-semibold"),children:i.label},i.href);return g.jsxs(Bx,{open:n,onOpenChange:r,children:[g.jsx(Ux,{asChild:!0,children:g.jsx(Oo,{variant:"outline",size:"icon","aria-label":"פתיחת תפריט",className:X("rounded-xl",t&&"bg-background/70 backdrop-blur"),children:g.jsx(Jw,{})})}),g.jsxs(Gx,{side:"right",className:"w-[min(22rem,88vw)] gap-0 overflow-y-auto",dir:"rtl",children:[g.jsxs(Kx,{className:"text-right",children:[g.jsx(Yx,{className:"font-display text-3xl font-normal",children:"תפריט"}),g.jsx(Xx,{children:"ייעוץ חינוכי, NLP, CBT ודמיון מודרך"})]}),g.jsxs("nav",{"aria-label":"ניווט ראשי",className:"flex flex-col gap-1 px-4",children:[ph.map(i=>o(i)),mh.map(i=>g.jsxs("div",{className:"flex flex-col gap-0.5",children:[g.jsx(dh,{className:"my-2"}),g.jsx("p",{className:"text-muted-foreground px-3 pb-1 text-sm font-semibold",children:i.label}),i.items.map(s=>o(s,!0))]},i.label)),g.jsx(dh,{className:"my-2"}),hh.map(i=>o(i))]}),g.jsx(Qx,{children:g.jsx(Oo,{asChild:!0,size:"lg",className:"rounded-full",children:g.jsx("a",{href:Ss.href,onClick:()=>r(!1),children:Ss.label})})})]})]})}function nk(){const e=Jx(),t=qx("(min-width: 981px)"),n=e==="home";return t&&!n?g.jsx(ek,{route:e}):g.jsx(tk,{route:e,floating:n})}function Nu(e,t){const n=document.getElementById(e);n&&Jf(n).render(g.jsx(zw,{dir:"rtl",children:t}))}function xh(){Nu("nav-root",g.jsx(nk,{})),Nu("contact-root",g.jsx(zx,{})),Nu("toast-root",g.jsx(D1,{position:"bottom-center",dir:"rtl",richColors:!1}))}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",xh):xh()})();
 
 </script>
 </body>
